@@ -38,7 +38,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #
 gem 'devise'
-
+gem 'rest-client', '~> 2.1'
+gem 'redis'
+gem 'sidekiq'
+gem 'sidekiq-cron'
+gem 'pry', '~> 0.13.1'
 
 
 group :development, :test do

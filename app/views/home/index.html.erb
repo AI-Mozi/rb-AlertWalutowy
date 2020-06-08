@@ -1,0 +1,21 @@
+<h1>Home page</h1>
+<table>
+  <tr>
+    <td>
+      <p>Name</p>
+    </td>
+    <td>
+      <p>Mid</p>
+    </td>
+  </tr>
+  <% @currency.each do |currency|%>
+    <tr>    
+      <td>
+        <%= currency.name %>
+      </td>
+      <td>
+        <%= currency.value %>
+      </td>
+    </tr>
+  <% end %>
+</table>

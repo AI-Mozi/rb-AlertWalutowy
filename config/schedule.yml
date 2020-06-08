@@ -1,0 +1,6 @@
+fetch_currency:
+  cron: "*/5 * * * *"
+  class: "CurrencyWorker"
+fetch_history_currency:
+  cron: "0 0 * * *"
+  class: "HistoryCurrencyWorker"  
