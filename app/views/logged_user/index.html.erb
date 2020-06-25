@@ -1,0 +1,28 @@
+<h1>Your currencies</h1>
+<%= @id %>
+<table>
+  <tr>
+    <td>
+      <p>Name</p>
+    </td>
+    <td>
+      <p>Mid</p>
+    </td>
+    <td>
+      <p>Date</p>
+    </td>
+  </tr>
+  <% @currencies.each do |currency|%>
+    <tr>    
+      <td>
+        <%= currency.currency.name %>
+      </td>
+      <td>
+        <%= currency.currency.value %>
+      </td>
+      <td>
+        <%= currency.currency_history.mid %>
+      </td>
+    </tr>
+  <% end %>
+</table>
