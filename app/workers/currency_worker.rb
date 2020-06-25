@@ -1,7 +1,7 @@
 class CurrencyWorker
   include Sidekiq::Worker
 
-  def perform()
+  def perform
     CurrencyService.call
   end
 end

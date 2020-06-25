@@ -1,6 +1,5 @@
 class LoggedUserController < ApplicationController
   before_action :require_login
-  #before_action :set_currencies 
 
   def index
     @currencies = current_user.user_currencies
@@ -8,9 +7,10 @@ class LoggedUserController < ApplicationController
   end
 
   private
+
   def require_login
-      unless current_user
-        redirect_to new_user_session_url
-      end
+    unless current_user
+      redirect_to new_user_session_url
     end
+  end
 end
