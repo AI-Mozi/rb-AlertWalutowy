@@ -2,11 +2,10 @@ class UserCurrencyController < ApplicationController
   
     def new
       @user_currency = UserCurrency.new()
-      @user = current_user      
     end
   
     def create
-      UserCurrencyManager.new(params[:user][:currency_ids], current_user).run
+      UserCurrencyManager.new(params[:user][:currency_ids], current_user).call
       redirect_to logged_user_index_path
     end
   
