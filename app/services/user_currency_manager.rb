@@ -1,21 +1,28 @@
 class UserCurrencyManager
   attr_reader :currency_ids, :user
-
+  
   def initialize(currency_ids, user)
     @currency_ids = currency_ids
     @user = user
   end
 
+  def call
+    create_user_currency_from_checked_currencies
+    destroy_user_currency_from_unchecked_currencies
+  end
+  
+  private
+  
   def clean_currencies
-    currency_ids.reject { |id| id == "" }
+    currency_ids.reject(&:blank?)
   end
 
   def checked_currencies
-    clean_currencies.map { |id| Currency.find(id) }
+    Currency.where(id: clean_currencies)
   end
 
   def unchecked_currencies
-    Currency.all.reject { |currency| checked_currencies.include?(currency) }
+    Currency.where.not(id: checked_currencies.pluck(:id))
   end
 
   def create_user_currency_from_checked_currencies
@@ -29,10 +36,5 @@ class UserCurrencyManager
       user_currency = UserCurrency.find_by(currency: currency, user: user)
       user_currency.destroy if user_currency
     end
-  end
-
-  def run
-    create_user_currency_from_checked_currencies
-    destroy_user_currency_from_unchecked_currencies
   end
 end
