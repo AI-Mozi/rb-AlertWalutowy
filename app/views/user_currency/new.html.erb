@@ -1,0 +1,10 @@
+<%= form_for @user_currency, url: {action: "create"}  do |f| %>
+  
+  <% Currency.all.each do |currency| %>
+    <div>
+     <%= check_box_tag currency.id, currency.id, current_user.currencies.include?(currency), :name => 'user[currency_ids][]' %>
+      <%= label_tag currency.id, currency.name %>
+    </div>
+  <% end %>
+  <%= submit_tag %>
+<% end %>

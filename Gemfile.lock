@@ -48,6 +48,10 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     bcrypt (3.1.13)
+    better_errors (2.9.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
@@ -200,6 +204,9 @@ GEM
     sidekiq-cron (1.2.0)
       fugit (~> 1.1)
       sidekiq (>= 4.2.1)
+    simple_form (5.0.3)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -242,6 +249,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors (~> 2.9, >= 2.9.1)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -259,6 +267,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq
   sidekiq-cron
+  simple_form (~> 5.0, >= 5.0.3)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
