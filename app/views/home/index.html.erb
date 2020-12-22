@@ -1,21 +1,22 @@
-<h1>Home page</h1>
-<table>
-  <tr>
-    <td>
-      <p>Name</p>
-    </td>
-    <td>
-      <p>Mid</p>
-    </td>
-  </tr>
-  <% @currency.each do |currency|%>
-    <tr>    
-      <td>
-        <%= currency.name %>
-      </td>
-      <td>
-        <%= currency.value %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<div class="center-align">
+  <h1>Home page</h1>
+</div>
+<div class="container">
+  <div class="row center-align" > 
+    <div class="col s4 offset-s2"><span >NAME</span></div>
+    <div class="col s4" ><span>MID</span></div>
+
+  
+    <% @currency.each do |currency|%>
+    <div class="row center-align">
+      <div class="col s4 offset-s2">
+          <%= currency.name %>
+      </div>
+      <div class="col s4">
+          <%= currency.value %>
+      </div>
+    </div>
+    <% end %>
+  
+  </div>
+</div>

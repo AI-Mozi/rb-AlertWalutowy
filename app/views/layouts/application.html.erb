@@ -7,41 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <nav class="nav">
+      <div class="nav-wrapper blue">
+        <%= link_to root_path, :class => "brand-logo" do %>
+          Alert Walutowy
+        <% end %>
 
-    <div>
-      <%= link_to root_path do %>
-        <h1>Alert Walutowy</h1>
-      <% end %>
-    </div>
-
-    <div>
-      <% if user_signed_in? %>
-          <p class="control">
-            <%= link_to current_user.nick, edit_user_registration_path %>
-          </p>
-          <p>
-            <%= link_to "Dodaj waluty" ,new_user_currency_path %>
-          </p>
-          <p>
-            <%= link_to  "Wybrane waluty", logged_user_index_path %>
-          </p>
-          <p>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-          </p>
-        <% else %>
-          <p class="control">
-            <%= link_to 'Sign Up', new_user_session_path %>
-          </p>
-          <p class="control">
-            <%= link_to 'Sign In', new_user_registration_path %>
-      <% end %>
-    </div>
+        <a href="#" class="sidenav-trigger" data-target="nav-mobile">
+		      <i class="material-icons">menu</i>
+	      </a>
+        
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <%= render "layouts/navbar" %>
+        </ul>
+      </div>
+    </nav>
 
     <%= yield %>
   </body>
