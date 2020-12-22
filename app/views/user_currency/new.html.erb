@@ -1,10 +1,20 @@
-<%= form_for @user_currency, url: {action: "create"}  do |f| %>
-  
-  <% Currency.all.each do |currency| %>
-    <div>
-     <%= check_box_tag currency.id, currency.id, current_user.currencies.include?(currency), :name => 'user[currency_ids][]' %>
-      <%= label_tag currency.id, currency.name %>
-    </div>
+<div class="center-align">
+  <h1>Select Currencies</h1>
+</div>
+<div class="container">
+  <%= simple_form_for @user_currency, url: {action: "create"}  do |f| %>
+    <% Currency.all.each do |currency| %>
+      <div class="row">
+        <div class="col m6 offset-m3">
+          <p>
+            <label>
+              <%= check_box_tag currency.id, currency.id, current_user.currencies.include?(currency), :name => 'user[currency_ids][]' %>
+              <span><%= currency.name %></span>
+            </label>    
+          </p>
+          </div>
+      </div> 
+    <% end %>
+      <%= submit_tag %>
   <% end %>
-  <%= submit_tag %>
-<% end %>
+</div>
