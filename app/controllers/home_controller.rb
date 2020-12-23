@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  def index    
-     @currency = Currency.all  
+  def index
+    @currencies = Currency.all
+    @main_currencies = ['euro', 'dolar amerykański', 'funt szterling']
   end
 end
