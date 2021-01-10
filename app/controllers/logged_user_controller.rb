@@ -2,7 +2,7 @@ class LoggedUserController < ApplicationController
   before_action :require_login
 
   def index
-    @currencies = current_user.currency_histories
+    @past_currencies = current_user.currency_histories.group_by(&:currency_id)
   end
 
   private

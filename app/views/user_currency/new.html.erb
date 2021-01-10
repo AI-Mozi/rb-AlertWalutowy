@@ -3,18 +3,18 @@
 </div>
 <div class="container">
   <%= simple_form_for @user_currency, url: {action: "create"}  do |f| %>
-    <% Currency.all.each do |currency| %>
-      <div class="row">
-        <div class="col m6 offset-m3">
+    <div class="row">
+      <% Currency.all.each do |currency| %>
+        <div class="col m4 offset-m2">
           <p>
             <label>
               <%= check_box_tag currency.id, currency.id, current_user.currencies.include?(currency), :name => 'user[currency_ids][]' %>
-              <span><%= currency.name %></span>
+              <span><%= currency.name.upcase %></span>
             </label>    
           </p>
-          </div>
-      </div> 
-    <% end %>
+        </div>
+      <% end %>
+    </div> 
     <div class="center-align">
       <%= submit_tag("Add currencies", :class => "waves-effect waves-light btn") %>
     </div>

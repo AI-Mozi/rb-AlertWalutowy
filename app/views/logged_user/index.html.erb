@@ -3,30 +3,18 @@
 </div>
 <div class="container">
   <div class="row center-align">
-    <div class="col s4 m4 offset-m2 offset-s1"><span>NAME</span></div>
-    <div class="col s1 m1"><span>MID</span></div>
-    <div class="col s5 m3"><span>DATE</span></div>
-
-  
-    <% @currencies.each do |currency|%>
-    <div class="row center-align">
-      <div class="col s4 m4 offset-m2 offset-s1"">
-          <%= currency.currency.name %>
-      </div>
-      <div class="col s1 m1">
-          <%= currency.mid %>
-      </div>
-      <div class="col s5 m3">
-          <%= currency.day %>
-      </div>
-    </div>
+    <% @past_currencies.each do |each_past| %>
+      <% @name = Currency.find(each_past[0]).name.upcase %>
+      <% @min = each_past[1].pluck(:mid).min%>
+      <% @max = each_past[1].pluck(:mid).max%>
+      <% @avg = (@max-@min).abs%>
+      <%= line_chart each_past[1].pluck(:day,:mid), min: (@min-@avg), max: (@max+@avg), curve: false, title: @name %>
+    <%end%>
+  </div>
+  <div class="row center-align">
+    <%= link_to new_user_currency_path, :class => "waves-effect waves-light btn-large" do%>
+      ADD CURRENCIES
+      <i class="material-icons left">add</i>
     <% end %>
-    <div class="row center-align">
-     
-         <%= link_to new_user_currency_path, :class => "waves-effect waves-light btn-large" do%>
-            DODAJ WALUTY
-            <i class="material-icons left">add</i>
-         <% end %>
-    </div>
   </div>
 </div>
