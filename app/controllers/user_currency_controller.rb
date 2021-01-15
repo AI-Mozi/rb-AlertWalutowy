@@ -2,7 +2,7 @@ class UserCurrencyController < ApplicationController
   before_action :require_login
 
   def new
-     @user_currency = UserCurrency.new()
+    @user_currency = UserCurrency.new()
   end
   
   def create

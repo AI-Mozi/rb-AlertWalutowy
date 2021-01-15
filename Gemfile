@@ -46,6 +46,8 @@ gem 'pry', '~> 0.13.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'jquery-rails'
+gem "chartkick"
+gem 'groupdate'
 
 
 
