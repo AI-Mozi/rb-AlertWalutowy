@@ -4,3 +4,6 @@ fetch_currency:
 fetch_history_currency:
   cron: '0 0 * * *'
   class: 'HistoryCurrencyWorker'
+fetch_bid_ask_currency:
+  cron: '*/5 * * * *'
+  class: 'BidAskCurrencyWorker'

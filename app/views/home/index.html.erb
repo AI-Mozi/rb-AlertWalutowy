@@ -2,11 +2,7 @@
   <h1>DASHBOARD</h1>
 </div>
 <div class="container">
-  <div class="row">       
-    <div class="col m10 offset-m1 right-align">MID</div>
-   </div>  
-
-   <div class="row">   
+  <div class="row">   
     <% @currencies.each do |currency|%>
       <% if @main_currencies.include?(currency.name)%>
         <div class="col m6 offset-m1">
