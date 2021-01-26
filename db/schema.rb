@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_090310) do
+ActiveRecord::Schema.define(version: 2021_01_25_110322) do
+
+  create_table "bid_ask_currencies", force: :cascade do |t|
+    t.integer "currency_id"
+    t.decimal "bid"
+    t.decimal "ask"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["currency_id"], name: "index_bid_ask_currencies_on_currency_id"
+  end
 
   create_table "currencies", force: :cascade do |t|
     t.string "name"
@@ -33,6 +42,8 @@ ActiveRecord::Schema.define(version: 2020_06_15_090310) do
     t.integer "currency_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "purchase"
+    t.decimal "sale"
     t.index ["currency_id"], name: "index_user_currencies_on_currency_id"
     t.index ["user_id"], name: "index_user_currencies_on_user_id"
   end
