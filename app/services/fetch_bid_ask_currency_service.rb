@@ -6,7 +6,7 @@ class FetchBidAskCurrencyService < ApplicationService
     @bid_rates.each do |each_rate|
       bid_currency = Currency.find_by(name: each_rate['currency'])
 
-      @find_bid_currency = BidAskCurrency.find_by(currency_id: bid_currency.id)
+      find_bid_currency = BidAskCurrency.find_by(currency_id: bid_currency.id)
 
       if find_bid_currency.present?
         find_bid_currency.update(ask: each_rate['ask'], bid: each_rate['bid'])
