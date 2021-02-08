@@ -3,50 +3,15 @@
 </div>
 <div class="container">
   <div class="row center-align">
-    <% @past_currencies.each do |each_past| %>
-      <div class="right-align">
-        <a class="waves-effect waves-light btn-small modal-trigger" href="#<%= each_past[0] %>">Select</a>
+    <% @posts.each do |post| %>
+     <div class="right-align">
+      <%= link_to edit_bid_ask_currency_path(post[:id]), :class => "waves-effect waves-light btn-small" do%>
+      Select
+      <%end%>
       </div>
-      <%#= each_past.inspect %>
-      <% @x = each_past[0]%>
-      <% @name = Currency.find(each_past[0]).name.upcase %>
-      <% @min = each_past[1].pluck(:mid).min%>
-      <% @max = each_past[1].pluck(:mid).max%>
-      <% @avg = (@max-@min).abs%>
-      <%= line_chart each_past[1].pluck(:day,:mid), min: (@min-@avg), max: (@max+@avg), curve: false, title: @name %>
-
-      <div id="<%= each_past[0] %>" class="modal">
-        <div class="modal-content center-align">
-          <h4>Purchase and Sale</h4>
-          <p><%= @name %></p>
-          
-        <%= form_for @add_purchase_and_sale, url: bid_ask_currency_path(@add_purchase_and_sale), method: :patch do |uc| %>
-          <div class="container">
-            <div class="row">
-              <div class="col s6">
-                Purchase: <%= uc.number_field :purchase %>
-              </div>
-              <div class="col s6">
-                Sale: <%= uc.number_field :sale %>
-              </div>
-            </div>
-          </div>
-           <div class="center-align">
-            <%= button_tag(type: "submit", :class => "waves-effect waves-light btn-large") do%>
-              ADD CURRENCIES<i class="material-icons left">add</i>
-            <%end%>
-    </div>
-        <% end %>
-
-        </div>
-        <div class="modal-footer">
-          <a class="modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
-      </div>
+      <%= line_chart post[:chart], min: (post[:min]-post[:avg]), max: (post[:max]+post[:avg]), curve: false, title: post[:name] %>
     <%end%>
   </div>
-
-  
   <div class="row center-align">
     <%= link_to new_user_currency_path, :class => "waves-effect waves-light btn-large" do%>
       ADD CURRENCIES

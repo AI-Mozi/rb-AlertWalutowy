@@ -1,0 +1,22 @@
+<%= form_for @add_purchase_and_sale, url: bid_ask_currency_path, method: :patch do |uc| %>
+  <div class="container">
+    <div class="row">
+      <div class="center-align">
+        <h3><%= @currency_name %></h3>
+        <p></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s5 m4 offset-s1 offset-m2">
+        <%= uc.number_field :purchase, placeholder: "Purchase"%>
+      </div>
+      <div class="input-field col s5 m4">
+        <%= uc.number_field :sale, placeholder: "Sale"%>
+      </div>
+    </div>
+  </div>
+   <div class="center-align">
+    <%= button_tag(type: "submit", :class => "btn waves-effect waves-light") do%>
+      ADD<i class="material-icons left">add</i>
+    <%end%>
+<%end%>
