@@ -3,12 +3,13 @@
 </div>
 <div class="container">
   <div class="row center-align">
-    <% @past_currencies.each do |each_past| %>
-      <% @name = Currency.find(each_past[0]).name.upcase %>
-      <% @min = each_past[1].pluck(:mid).min%>
-      <% @max = each_past[1].pluck(:mid).max%>
-      <% @avg = (@max-@min).abs%>
-      <%= line_chart each_past[1].pluck(:day,:mid), min: (@min-@avg), max: (@max+@avg), curve: false, title: @name %>
+    <% @posts.each do |post| %>
+     <div class="right-align">
+      <%= link_to edit_bid_ask_currency_path(post[:id]), :class => "waves-effect waves-light btn-small" do%>
+      Select
+      <%end%>
+      </div>
+      <%= line_chart post[:chart], min: (post[:min]-post[:avg]), max: (post[:max]+post[:avg]), curve: false, title: post[:name] %>
     <%end%>
   </div>
   <div class="row center-align">

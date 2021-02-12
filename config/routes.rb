@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :user_currency, only: [:new, :create]
+  resources :bid_ask_currency, only: [:edit, :update]
 
   mount Sidekiq::Web => '/sidekiq'
 end
