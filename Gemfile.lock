@@ -193,6 +193,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ruby_dep (1.5.0)
+    ruby_http_client (3.5.2)
     rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -208,6 +209,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sendgrid-ruby (6.4.0)
+      ruby_http_client (~> 3.4)
     sidekiq (6.0.7)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -281,6 +284,7 @@ DEPENDENCIES
   rest-client (~> 2.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  sendgrid-ruby (~> 6.4)
   sidekiq
   sidekiq-cron
   simple_form (~> 5.0, >= 5.0.3)
