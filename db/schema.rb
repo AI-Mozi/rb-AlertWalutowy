@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_110322) do
+ActiveRecord::Schema.define(version: 2021_01_25_103903) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bid_ask_currencies", force: :cascade do |t|
-    t.integer "currency_id"
+    t.bigint "currency_id"
     t.decimal "bid"
     t.decimal "ask"
     t.datetime "created_at", null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_110322) do
   end
 
   create_table "currency_histories", force: :cascade do |t|
-    t.integer "currency_id"
+    t.bigint "currency_id"
     t.decimal "mid"
     t.date "day"
     t.datetime "created_at", null: false
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_01_25_110322) do
   end
 
   create_table "user_currencies", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "currency_id"
+    t.bigint "user_id"
+    t.bigint "currency_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "purchase"
@@ -65,4 +68,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_110322) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bid_ask_currencies", "currencies"
+  add_foreign_key "user_currencies", "currencies"
+  add_foreign_key "user_currencies", "users"
 end

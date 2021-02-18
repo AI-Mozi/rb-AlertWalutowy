@@ -1,4 +1,3 @@
-require 'pry'
 class BidAskCurrencyController < ApplicationController
   def edit
     @add_purchase_and_sale = current_user.user_currencies.find_by(currency_id: params[:id])
