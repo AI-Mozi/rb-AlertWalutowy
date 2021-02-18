@@ -18,4 +18,3 @@
 //= require jquery
 //= require chartkick
 //= require Chart.bundle
-//= require bid_ask_modal

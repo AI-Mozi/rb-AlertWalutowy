@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :logged_user do
     member do
+      get :confirm_email
     end
   end
 
