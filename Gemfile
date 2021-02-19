@@ -49,6 +49,8 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'jquery-rails'
 gem "chartkick"
 gem 'groupdate'
+gem "sentry-ruby"
+gem "sentry-rails"
 
 
 
