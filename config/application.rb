@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
 
   module AlertWalutowy
     class Application < Rails::Application
@@ -29,5 +30,6 @@ Bundler.require(*Rails.groups)
       true
     end
   end
-
 end
+
+
