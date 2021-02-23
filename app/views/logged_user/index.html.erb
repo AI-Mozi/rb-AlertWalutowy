@@ -1,15 +1,19 @@
 <div class="center-align">
   <h3>Your Currencies</h3>
 </div>
-<div class="container">
-  <div class="row center-align">
+<div class="container curr_container">
+  <div class="row s12 m6 offset-m3 center-align every_value">
     <% @posts.each do |post| %>
-     <div class="right-align">
-      <%= link_to edit_bid_ask_currency_path(post[:id]), :class => "waves-effect waves-light btn-small" do%>
-      Select
-      <%end%>
-      </div>
-      <%= line_chart post[:chart], min: (post[:min]-post[:avg]), max: (post[:max]+post[:avg]), curve: false, title: post[:name] %>
+      <div class="each_value">
+        <%= line_chart post[:chart], min: (post[:min]-post[:avg]), max: (post[:max]+post[:avg]), curve: false, title: post[:name], round: 5 %>
+        <div class="right-align">
+          <% if BidAskCurrency.find_by(currency_id: post[:id]) %>
+            <%= link_to edit_bid_ask_currency_path(post[:id]), :class => "waves-effect waves-light btn-small" do %>
+            Add a notification
+            <% end %>
+          <%end%>
+        </div>
+        </div>
     <%end%>
   </div>
   <div class="row center-align">
