@@ -5,11 +5,21 @@
   <div class="row">   
     <% @currencies.each do |currency|%>
       <% if @main_currencies.include?(currency.name)%>
-        <div class="col m6 offset-m1">
-          <h4><b><%= currency.name.upcase %></b></h4>
+        <div class="hide-on-small-only">
+          <div class="col m5 offset-m2">
+            <h4><b><%= currency.name.upcase %></b></h4>
+          </div>
+          <div class="col m3 right-align">
+            <h4><%= currency.value %></h4>
+          </div>
         </div>
-        <div class="col m4 right-align">
-          <h4><%= currency.value %></h4>
+        <div class="hide-on-med-and-up">
+          <div class="col s12 center-align">
+            <h4><b><%= currency.name.upcase %></b></h4>
+          </div>
+          <div class="col s12 center-align">
+            <h4><%= currency.value %></h4>
+          </div>
         </div>
       <%end%>
     <% end %>

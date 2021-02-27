@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  currency: one
+  type: 
+  value: 9.99
+
+two:
+  user: two
+  currency: two
+  type: 
+  value: 9.99
