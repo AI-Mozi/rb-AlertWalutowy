@@ -79,7 +79,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.assets.precompile += %w( calendar/.js local/.js jquery_calendar/*.css chartkick.js )
+  config.assets.precompile += %w( Chart.bundle )
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
