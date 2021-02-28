@@ -48,6 +48,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'jquery-rails'
 gem "chartkick"
+gem 'highcharts-rails'
 gem 'groupdate'
 gem "sentry-ruby"
 gem "sentry-rails"
