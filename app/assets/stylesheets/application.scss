@@ -15,32 +15,3 @@
  */
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
-
-.notice{
-  background-color: #00D1B2;
-  margin: 0;
-  padding: 8px;
-}
-.alert{
-  background-color: #FF3860;
-}
-body{
-  background-color: #dddddd;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-.nav-wrapper{
-  background-color: #30475e;
-}
-.brand-logo{
-  padding-left: 10px !important;
-}
-.every_value{
-  margin-right: 8px;
-}
-.each_value{
-  margin-bottom: 20px;
-}
-.curr_container{
-  width: 100%;
-}
