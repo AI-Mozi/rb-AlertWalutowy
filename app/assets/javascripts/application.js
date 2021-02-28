@@ -16,7 +16,5 @@
 //= require_tree .
 //= require materialize
 //= require jquery
-//= require jquery_ujs
 //= require chartkick
 //= require Chart.bundle
-//= require nav.js
