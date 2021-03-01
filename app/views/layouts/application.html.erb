@@ -12,16 +12,16 @@
 
   <body>
     <% if flash[:notice] %>
-      <p class="notice center-align"><%= notice %></p>
+      <p class="notice"><%= notice %></p>
     <% end %>
     <% if flash[:alert] %>
-      <p class="alert center-align"><%= alert %></p>
+      <p class="alert"><%= alert %></p>
     <% end %>
 
     <nav class="nav">
-      <div class="nav-wrapper">
+      <div class="nav-wrapper blue">
         <%= link_to root_path, :class => "brand-logo" do %>
-          <b>ALERT <span class="hide-on-small-and-down">WALUTOWY</span></b>
+          Alert Walutowy
         <% end %>
 
         <a href="#" class="sidenav-trigger" data-target="nav-mobile">
