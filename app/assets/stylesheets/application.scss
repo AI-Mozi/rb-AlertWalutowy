@@ -24,6 +24,8 @@
 }
 .alert{
   background-color: #FF3860;
+  margin: 0;
+  padding: 8px;
 }
 body{
   background-color: #dddddd;
@@ -43,4 +45,18 @@ body{
 }
 .curr_container{
   width: 100%;
+}
+#error_number{
+  text-transform: uppercase ;
+}
+#error_list{
+  padding-left: 10px;
+}
+#error_explanation{
+  border: 2px solid red;
+  border-radius: 5px; 
+  text-align: center;
+}
+.no_currencies{
+  margin-top: 70px;
 }
