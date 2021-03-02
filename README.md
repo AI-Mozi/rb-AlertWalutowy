@@ -25,6 +25,7 @@ Things you may want to cover:
 
 # Alert Walutowy
 
-Simple app 
+A simple application that allows you to check the values of currencies.
+https://pacific-castle-09551.herokuapp.com/
 
 ### 
