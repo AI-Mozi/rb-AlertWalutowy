@@ -10,9 +10,9 @@ https://pacific-castle-09551.herokuapp.com/
 ### System dependencies
   * PostgresSQL
 ### Installation
-  *Clone project using Git </br>
-  *Run `bundle install` </br>
-  *Configure database </br>
+  * Clone project using Git </br>
+  * Run `bundle install` </br>
+  * Configure database </br>
     - Create the DB user by running command: </br>
     ```
     sudo -u postgres psql -c "CREATE USER demo_aa WITH CREATEDB NOCREATEROLE PASSWORD 'demo_aa'"
