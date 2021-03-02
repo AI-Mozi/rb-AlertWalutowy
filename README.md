@@ -30,3 +30,4 @@ https://pacific-castle-09551.herokuapp.com/
 ### Services 
 
  * [SIDEKIQ](https://github.com/mperham/sidekiq)
+ - Run command `sidekiq`   
