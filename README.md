@@ -23,7 +23,9 @@ https://pacific-castle-09551.herokuapp.com/
        AW_DB_PASSWORD=password
        AW_DB_USERNAME=username
       ```
-    - Run command `bin/rails db:setup` to create database with seed data. </br>
+  * Run command `bin/rails db:setup` to create database with seed data. 
+  * Start server: `bin/rails s`
+  * Navigate in browser to: http://localhost:3000/
 
 ### Services 
 
