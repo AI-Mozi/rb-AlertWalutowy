@@ -11,9 +11,7 @@ https://pacific-castle-09551.herokuapp.com/
   * PostgresSQL
 ### Configuration
 
-### Database creation
-
-### Database initialization
+### Database configuration
 
 ### Services
 
