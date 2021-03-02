@@ -29,4 +29,4 @@ https://pacific-castle-09551.herokuapp.com/
 
 ### Services 
 
- [a link](https://github.com/mperham/sidekiq)
+ * [a SIDEKIQ](https://github.com/mperham/sidekiq)
