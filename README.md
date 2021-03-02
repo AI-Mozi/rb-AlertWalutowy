@@ -17,7 +17,7 @@ https://pacific-castle-09551.herokuapp.com/
       ```
       sudo -u postgres psql -c "CREATE USER username WITH CREATEDB NOCREATEROLE PASSWORD 'password'"
       ```
-    </br>
+    
     - Add password adn username to .env file <br>
      ```
       AW_DB_PASSWORD=password
