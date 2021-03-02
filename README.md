@@ -14,9 +14,10 @@ https://pacific-castle-09551.herokuapp.com/
   * Run `bundle install` </br>
   * Configure database </br>
     - Create the DB user by running command: </br>
-    ```
-    sudo -u postgres psql -c "CREATE USER demo_aa WITH CREATEDB NOCREATEROLE PASSWORD 'demo_aa'"
-    ```</br>
+      ```
+      sudo -u postgres psql -c "CREATE USER demo_aa WITH CREATEDB NOCREATEROLE PASSWORD 'demo_aa'"
+      ```
+    </br>
 ### Services
 
 ### Deployment instructions
