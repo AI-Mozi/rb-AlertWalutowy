@@ -25,7 +25,7 @@ https://pacific-castle-09551.herokuapp.com/
       ```
     - Export the environment to set the credentials with </br>
       ```
-      export DATABASE_USERNAME=demo_aa DATABASE_PASSWORD=demo_aa
+      export DATABASE_USERNAME=username DATABASE_PASSWORD=password
       ```
 ### Services
 
