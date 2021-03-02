@@ -18,7 +18,7 @@ https://pacific-castle-09551.herokuapp.com/
       sudo -u postgres psql -c "CREATE USER username WITH CREATEDB NOCREATEROLE PASSWORD 'password'"
       ```
     
-    - Create .env file and add password and username there <br>
+    - Create .env file and add password and username there. Att .env to your .gitignore <br>
       ```
        AW_DB_PASSWORD=password
        AW_DB_USERNAME=username
