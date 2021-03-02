@@ -15,9 +15,13 @@ https://pacific-castle-09551.herokuapp.com/
   * Configure database </br>
     - Create the DB user by running command: </br>
       ```
-      sudo -u postgres psql -c "CREATE USER demo_aa WITH CREATEDB NOCREATEROLE PASSWORD 'demo_aa'"
+      sudo -u postgres psql -c "CREATE USER username WITH CREATEDB NOCREATEROLE PASSWORD 'password'"
       ```
     </br>
+  * Add password adn username to .env file <br>
+     
+      AW_DB_PASSWORD=password</br>
+      AW_DB_USERNAME=username
 ### Services
 
 ### Deployment instructions
