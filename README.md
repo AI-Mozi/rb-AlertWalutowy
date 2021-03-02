@@ -23,10 +23,8 @@ https://pacific-castle-09551.herokuapp.com/
        AW_DB_PASSWORD=password
        AW_DB_USERNAME=username
       ```
-    - Export the environment to set the credentials with </br>
-      ```
-      export DATABASE_USERNAME=username DATABASE_PASSWORD=password
-      ```
-### Services
+    - Run command `bin/rails db:setup` to create database with seed data. </br>
+
+### Services 
 
 ### Deployment instructions
