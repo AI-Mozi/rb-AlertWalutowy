@@ -6,7 +6,7 @@ https://pacific-castle-09551.herokuapp.com/
 
 
 ### Ruby version
-
+  -2.7.1
 ### System dependencies
 
 ### Configuration
