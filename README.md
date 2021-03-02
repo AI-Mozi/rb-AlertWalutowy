@@ -15,6 +15,6 @@ https://pacific-castle-09551.herokuapp.com/
 
 ### Database initialization
 
-### Services (job queues, cache servers, search engines, etc.)
+### Services
 
 ### Deployment instructions
