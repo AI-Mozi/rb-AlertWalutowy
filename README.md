@@ -19,9 +19,10 @@ https://pacific-castle-09551.herokuapp.com/
       ```
     </br>
   * Add password adn username to .env file <br>
-     
-      AW_DB_PASSWORD=password</br>
+     ```
+      AW_DB_PASSWORD=password
       AW_DB_USERNAME=username
+     ```
 ### Services
 
 ### Deployment instructions
