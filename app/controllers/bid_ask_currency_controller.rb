@@ -16,7 +16,6 @@ class BidAskCurrencyController < ApplicationController
         format.html { render :edit }
       end
     end
-
   end
 
   private

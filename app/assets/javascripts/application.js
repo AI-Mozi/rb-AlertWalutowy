@@ -20,21 +20,6 @@
 //= require chartkick
 //= require Chart.bundle 
 
-
-
-$(document).on('ready page:change', function() {
-  Waves.displayEffect(); // Initialize buttons wave effects
- $(".sidenav").sidenav(); // Initialize collapse button
-});
-
-// $(function() {
-//   $(".sidenav").sidenav();
-// });
-
-// $(document).ready(function(){
-//   $('.sidenav').sidenav();
-// });
-
 document.addEventListener('turbolinks:load', function() {
   elem = document.querySelector('#slide-out');
   instance = new M.Sidenav(elem, {});
