@@ -52,6 +52,7 @@ gem 'highcharts-rails'
 gem 'groupdate'
 gem "sentry-ruby"
 gem "sentry-rails"
+gem 'jquery-turbolinks'
 
 
 group :development, :test do

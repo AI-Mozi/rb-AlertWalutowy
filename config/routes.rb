@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    resources :currencies, only: [:index]
+  end
+
   resources :user_currency, only: [:new, :create]
   resources :bid_ask_currency, only: [:edit, :update]
 

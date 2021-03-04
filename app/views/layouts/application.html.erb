@@ -24,7 +24,7 @@
           <b>ALERT <span class="hide-on-small-and-down">WALUTOWY</span></b>
         <% end %>
 
-        <a href="#" class="sidenav-trigger" data-target="nav-mobile">
+        <a href="" data-target="slide-out" class="sidenav-trigger">
 		      <i class="material-icons">menu</i>
 	      </a>
         
@@ -33,6 +33,16 @@
         </ul>
       </div>
     </nav>
+
+    <ul id="slide-out" class="sidenav">
+      <div class="brand-logo-mobile">
+        <div class="test">
+          <h4>Alert walutowy</h4>
+        </div>
+
+        <%= render "layouts/navbar" %>
+      </div>
+    </ul>
 
     <%= yield %>
   </body>

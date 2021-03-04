@@ -37,6 +37,20 @@ body{
 .brand-logo{
   padding-left: 10px !important;
 }
+.brand-logo-mobile{
+  text-align: center;
+}
+.brand-logo-mobile h4{
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #30475e;
+  color: white;
+}
+.brand-logo-mobile li{
+  text-align: left;
+  border-bottom: 1px solid black;
+}
 .every_value{
   margin-right: 8px;
 }
@@ -59,4 +73,7 @@ body{
 }
 .no_currencies{
   margin-top: 70px;
+}
+.sidenav{
+  background-color: #dddddd;
 }
