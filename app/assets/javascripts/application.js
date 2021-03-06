@@ -14,7 +14,21 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require materialize
 //= require jquery
+//= require jquery.turbolinks
+//= require materialize
 //= require chartkick
 //= require Chart.bundle 
+
+document.addEventListener('turbolinks:load', function() {
+  elem = document.querySelector('#slide-out');
+  instance = new M.Sidenav(elem, {});
+});
+document.addEventListener('turbolinks:before-visit', function() {
+  elem = document.querySelector('#slide-out');
+  instance = M.Sidenav.getInstance(elem);
+  if (instance){
+    instance.destroy();
+  }
+});
+
