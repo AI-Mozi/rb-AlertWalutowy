@@ -31,3 +31,7 @@ https://pacific-castle-09551.herokuapp.com/
 
  * [SIDEKIQ](https://github.com/mperham/sidekiq)
  - Run command `sidekiq`   
+
+### API
+ 
+ Go to `/api/currencies` for currencies names and vlues.
