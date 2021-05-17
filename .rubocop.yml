@@ -1,0 +1,13 @@
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+AllCops:
+  EnabledByDefault: true
+Style/DocumentationMethod:
+  Enabled: false
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
+Style/Copyright:
+  Enabled: true

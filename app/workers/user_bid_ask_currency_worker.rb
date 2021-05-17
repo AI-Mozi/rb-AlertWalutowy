@@ -4,6 +4,6 @@ class UserBidAskCurrencyWorker
   def perform
     User.all.each do |user|
       FetchUserBidAskCurrencyService.call(user)
-    end  
+    end
   end
 end

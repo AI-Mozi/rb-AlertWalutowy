@@ -31,4 +31,3 @@ document.addEventListener('turbolinks:before-visit', function() {
     instance.destroy();
   }
 });
-
