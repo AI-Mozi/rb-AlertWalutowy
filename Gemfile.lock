@@ -114,9 +114,6 @@ GEM
       activesupport (>= 4.2.0)
     groupdate (5.2.1)
       activesupport (>= 5)
-    haml (5.2.1)
-      temple (>= 0.8.0)
-      tilt
     highcharts-rails (6.0.3)
       railties (>= 3.1)
     http-accept (1.7.0)
@@ -298,7 +295,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -340,7 +336,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   groupdate
-  haml
   highcharts-rails
   jbuilder (~> 2.5)
   jquery-rails
