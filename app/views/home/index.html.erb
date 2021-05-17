@@ -1,55 +1,43 @@
 <div class="center-align">
   <h1>DASHBOARD</h1>
 </div>
-<div class="container">
-  <div class="row">   
-    <% @currencies.each do |currency|%>
+<div class="home_container main_currencies">
+  <div class="row">
+    <div class="col l5 main_currencies_col">
+      <% @currencies.each do |currency|%>
       <% if @main_currencies.include?(currency.name)%>
-        <div class="hide-on-small-only">
-          <div class="col m5 offset-m2">
-            <h4><b><%= currency.name.upcase %></b></h4>
-          </div>
-          <div class="col m3 right-align">
-            <h4><%= currency.value %></h4>
-          </div>
+      <div class="row">
+        <div class="col s8 l8">
+          <h4><b><%= currency.name.upcase %></b></h4>
         </div>
-        <div class="hide-on-med-and-up">
-          <div class="col s12 center-align">
-            <h4><b><%= currency.name.upcase %></b></h4>
-          </div>
-          <div class="col s12 center-align">
-            <h4><%= currency.value %></h4>
-          </div>
+        <div class="col s4 l4 right-align">
+          <h4><%= currency.value %></h4>
         </div>
+      </div>
       <%end%>
-    <% end %>
+      <% end %>
+    </div>
+    <div class="converter col s12 m12 l6">
+      <%= render 'currencies_converter/form'%>
+      <div class="converter_output">
+        <p id="text_output"></p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container"> 
+<div class="other_currencies">
   <h5 class="center-align">Other Currencies</h5>
-
   <div class="row">
-    <div class="col s12 m8 offset-m2">  
-      <table class="highlight">
-        <thead>
-          <tr>
-            <th>NAME</th>
-            <th class="right-align">MID</th>
-          </tr>
-        </thead>
-      
-        <% @currencies.each do |currency|%>
-          <% if @main_currencies.exclude?(currency.name)%>        
-            <tbody>
-              <tr>
-                <td><%= currency.name.upcase %></td>
-                <td class="right-align"><%= currency.value %></td>
-              </tr>
-            </tbody>
-          <%end%>
-        <% end %>
-      </table>
-    </div>
+    <% @currencies.each do |currency|%>
+      <% if @main_currencies.exclude?(currency.name)%>
+      <div class="col s8 offset-s2 m6">
+        <p class="each_other_currency center-align">
+          <span><%= currency.name.upcase %></span>
+          <span><b><%= currency.value %></b></span>
+        </p>
+      </div>
+      <%end%>
+    <% end %>
   </div>
 </div>

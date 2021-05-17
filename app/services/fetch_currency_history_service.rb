@@ -18,7 +18,7 @@ class FetchCurrencyHistoryService < ApplicationService
       value_list.each do |v|
         currency = Currency.find_by(name: v['currency'])
 
-        unless CurrencyHistory.find_by(day: history_date , currency_id: currency.id)
+        unless CurrencyHistory.find_by(day: history_date, currency_id: currency.id)
           CurrencyHistory.create(day: history_date, mid: v['mid'], currency_id: currency.id)
         end
       end

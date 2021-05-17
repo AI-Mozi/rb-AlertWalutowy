@@ -77,3 +77,80 @@ body{
 .sidenav{
   background-color: #dddddd;
 }
+::-webkit-scrollbar {
+  width: 0;  
+  background: transparent; 
+}
+@media screen and (min-width: 840px){
+  .home_container,
+  .other_currencies{
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+@media screen and (max-width: 1276px){
+  .main_currencies_col,
+  .converter{
+    width: 100% !important;
+    // margin-left: 10% !important;
+  }
+  .main_currencies_col{
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1276px) {
+  .converter,
+  .main_currencies_col{
+    width: 45% !important;
+  }
+  .converter{
+    margin-left: 10% !important;
+  }
+}
+.main_currencies_col{
+  border: solid 1px black;
+  height: 350px;
+  .row{
+    display: flex;
+    height: 33% !important;
+    margin: 0;
+    align-items: center;
+    .col h4{
+        margin: 0;
+    }
+  }
+}
+select{
+  display: block;
+}
+.converter{
+  height: 350px;
+  border: 1px solid black;
+  padding-bottom: 22px !important;
+    .btn{
+      margin: 10px;
+    }
+    h4{
+      margin: 0;
+      padding-top: 10px;
+    }
+    .col{
+      padding: 3px;
+    }
+}
+.quantity_input{
+  text-align: center;
+}
+.each_other_currency{
+  font-size: 20px;
+}
+.converter_output{
+  width: 100%;
+  text-align: center;
+    p{
+      font-size: 30px;
+    }
+}
+#text_output{
+  margin: 0;
+}
