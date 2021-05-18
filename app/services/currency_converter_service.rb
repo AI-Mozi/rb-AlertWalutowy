@@ -1,4 +1,3 @@
-require 'pry'
 class CurrencyConverterService < ApplicationService
   attr_accessor :currency, :to_currency, :amount
 
@@ -10,9 +9,9 @@ class CurrencyConverterService < ApplicationService
 
   def call
     query = "#{currency}_#{to_currency}"
-    request = RestClient.get("https://free.currconv.com/api/v7/convert?q=#{query}&compact=ultra&apiKey=#{api_key}")
-    json = JSON.parse(request)
-    json[query]
+    query2 = "#{to_currency}_#{currency}"
+    request = RestClient.get("https://free.currconv.com/api/v7/convert?q=#{query},#{query2}&compact=ultra&apiKey=#{api_key}")
+    JSON.parse(request)
   end
 
   private

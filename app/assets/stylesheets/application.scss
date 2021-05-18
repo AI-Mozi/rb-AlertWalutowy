@@ -28,7 +28,7 @@
   padding: 8px;
 }
 body{
-  background-color: #dddddd;
+  background-color: #a7a7a7;
   font-family: 'Roboto Condensed', sans-serif;
 }
 .nav-wrapper{
@@ -108,8 +108,6 @@ body{
   }
 }
 .main_currencies_col{
-  border: solid 1px black;
-  height: 350px;
   .row{
     display: flex;
     height: 33% !important;
@@ -119,13 +117,12 @@ body{
         margin: 0;
     }
   }
+
 }
 select{
   display: block;
 }
 .converter{
-  height: 350px;
-  border: 1px solid black;
   padding-bottom: 22px !important;
     .btn{
       margin: 10px;
@@ -138,6 +135,14 @@ select{
       padding: 3px;
     }
 }
+.main_currencies_col,
+.converter{
+  color: white;
+  background-color: #405c77;
+  height: 350px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
 .quantity_input{
   text-align: center;
 }
@@ -147,10 +152,11 @@ select{
 .converter_output{
   width: 100%;
   text-align: center;
-    p{
-      font-size: 30px;
-    }
 }
 #text_output{
+  font-size: 25px;
+  margin: 0;
+}
+#second_text_output{
   margin: 0;
 }

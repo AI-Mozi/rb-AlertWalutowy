@@ -1,2 +1,9 @@
-var z = document.getElementById("text_output")
-z.innerHTML = "<%= @amount %> <%= @currency %> to <%= @to_currency %> = <%= @test %>"
+var first_output = document.getElementById("text_output");
+var second_output = document.getElementById("second_text_output");
+
+var amount = "<%= @amount %>";
+var first_currency = "<%= @converted_currency.first[1] %>" 
+var second_currency = "<%= @converted_currency.to_a.last[1] %>"
+
+first_output.innerHTML = "<%= @amount %> <%= @currency %> to <%= @to_currency %> = " + (first_currency * amount).toFixed(3);
+second_output.innerHTML = "<%= @amount %> <%= @to_currency %> to <%= @currency %> = " + (second_currency * amount).toFixed(3);
