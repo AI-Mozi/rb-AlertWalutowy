@@ -10,5 +10,7 @@ class User < ApplicationRecord
   has_many :currencies, through: :user_currencies
   has_many :currency_histories, through: :currencies
   has_many :bid_ask_currencies, through: :user_currencies
-  validates_uniqueness_of :nick
+
+  validates_uniqueness_of :nick, :email
+  validates_presence_of :nick, :email, :password
 end
