@@ -14,4 +14,11 @@ RSpec.describe Currency, :type => :model do
     it { should validate_presence_of(:code) }
     it { should validate_presence_of(:value) }
   end
+
+  describe 'associations' do
+    it { should have_many(:user_currencies) }
+    it { should have_many(:currency_histories) }
+    it { should have_many(:bid_ask_currencies) }
+    it { should have_many(:users).through(:user_currencies) }
+  end
 end

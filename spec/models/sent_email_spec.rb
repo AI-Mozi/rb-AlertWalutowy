@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe SentEmail, :type => :model do
+  let(:currency) { create(:currency) }
   subject{
     described_class.new(user_id: 1,
-                        currency_id: 1,
+                        currency_id: currency.id,
                         operation_type: "purchase",
                         value: 3.3)
   }
-  let(:currency) { create(:currency) }
 
   describe 'validations' do
     it 'is valid with valid attributes' do

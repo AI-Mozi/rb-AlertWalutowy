@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :nick, :email
   validates_presence_of :nick, :email, :password
+
+  validates_length_of :nick, minimum: 4, maximum: 10
 end
