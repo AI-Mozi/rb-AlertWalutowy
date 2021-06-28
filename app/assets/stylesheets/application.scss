@@ -16,6 +16,9 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+$base-color: rgb(32, 40, 64);
+$second-color: rgb(49, 58, 85);
+$base-purple: #9400D3;
 
 .notice{
   background-color: #00D1B2;
@@ -28,11 +31,16 @@
   padding: 8px;
 }
 body{
-  background-color: #a7a7a7;
+  background-color: rgb(20, 27, 46);
   font-family: 'Roboto Condensed', sans-serif;
 }
 .nav-wrapper{
-  background-color: #30475e;
+  background-color: rgb(65, 109, 170);
+}
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 }
 .brand-logo{
   padding-left: 10px !important;
@@ -81,6 +89,9 @@ body{
   width: 0;  
   background: transparent; 
 }
+.home_container{
+  margin-top: 50px;
+}
 @media screen and (min-width: 840px){
   .home_container,
   .other_currencies{
@@ -88,63 +99,37 @@ body{
     margin-left: 15%;
   }
 }
-@media screen and (max-width: 1276px){
-  .main_currencies_col,
-  .converter{
-    width: 100% !important;
-    // margin-left: 10% !important;
-  }
-  .main_currencies_col{
-    margin-bottom: 10px;
-  }
-}
-@media screen and (min-width: 1276px) {
-  .converter,
-  .main_currencies_col{
-    width: 45% !important;
-  }
-  .converter{
-    margin-left: 10% !important;
-  }
-}
-.main_currencies_col{
-  .row{
-    display: flex;
-    height: 33% !important;
-    margin: 0;
-    align-items: center;
-    .col h4{
-        margin: 0;
-    }
-  }
-
+.main_currencies_row{
+  margin: 0;
+  color: white;
+  background-color: $base-color;
+  border: 1px solid black;
+  border-radius: 15px;
 }
 select{
   display: block;
 }
 .converter{
   padding-bottom: 22px !important;
+  grid-area: converter; 
+  margin: 20px 20px 0 0;
+  color: white;
+  background-color: $base-color;
+  border: 1px solid black;
     .btn{
       margin: 10px;
+      background-color: #9400D3;
     }
     h4{
       margin: 0;
-      padding-top: 10px;
+      padding-top: 30px;
     }
-    .col{
-      padding: 3px;
-    }
-}
-.main_currencies_col,
-.converter{
-  color: white;
-  background-color: #405c77;
-  height: 350px;
-  border: 1px solid black;
-  border-radius: 20px;
 }
 .quantity_input{
   text-align: center;
+  color: white;
+  font-size: 25px !important;
+  width: 213px !important;
 }
 .each_other_currency{
   font-size: 20px;
@@ -156,7 +141,124 @@ select{
 #text_output{
   font-size: 25px;
   margin: 0;
+  text-align: center;
 }
 #second_text_output{
   margin: 0;
+}
+//grid laypout
+.grid-container {
+  display: grid; 
+  grid-template-columns: 1fr 0.7fr 1fr; 
+  grid-template-rows: 1.2fr 0.8fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "chart chart main_currencies"
+    "converter gold main_currencies"; 
+}
+.gold{
+  grid-area: gold; 
+  background-color: $base-color;
+  margin: 20px 20px 0 0;
+  border: 1px solid black;
+  color:white;
+    h4{
+      padding-bottom: 10px;
+    }
+    .gold-price{
+      font-size: 65px;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      padding: 5px 0;
+    }
+    .gold-date{
+      text-align: center;
+      width: 100%;
+      margin: 0;
+    }
+}
+.chart{
+  grid-area: chart;
+}
+.main_currencies{
+  grid-area: main_currencies;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.main_page{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.container{
+  width: 85% !important;
+  max-width: 85%;
+}
+.converter-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 0 20px
+}
+.first_output{
+  vertical-align: baseline;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 213px;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: box-shadow .3s, border .3s;
+}
+.convert-button{
+  margin: 0 50px;
+}
+table.striped > tbody > tr:nth-child(even){
+  background-color: $base-color;
+}
+table.striped > tbody > tr:nth-child(odd){
+  background-color: rgb(40, 47, 70);
+}
+table.striped > thead > tr > td{
+  background-color: $base-color;
+}
+.chart{
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $base-color;
+  color: white;
+  border: 1px solid black;
+}
+.chartjs-render-monitor{
+  color: white !important;
+}
+.logout-btn{
+  background-color: $base-purple;
+  font-weight: bold;
+}
+.btn{
+  background-color: $base-purple !important;
+}
+.registration-style{
+  height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  .row{
+    background-color: $base-color;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2% 5% 5% 5%;
+  }
 }

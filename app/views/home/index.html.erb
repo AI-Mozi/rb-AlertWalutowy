@@ -1,44 +1,53 @@
-<div class="center-align">
-  <h1>DASHBOARD</h1>
-</div>
-<div class="home_container main_currencies">
-  <div class="row">
-    <div class="col l5 main_currencies_col">
-      <% @currencies.each do |currency|%>
+<div class="container grid-container main_page">
+  <div class="chart">
+    <%= render 'chart' %>
+  </div>
+  <div class="main_currencies">
+    <% @currencies.each do |currency|%>
       <% if @main_currencies.include?(currency.name)%>
-      <div class="row">
+      <div class="row main_currencies_row">
         <div class="col s8 l8">
-          <h4><b><%= currency.name.upcase %></b></h4>
-        </div>
-        <div class="col s4 l4 right-align">
-          <h4><%= currency.value %></h4>
+          <h4><b><%= currency.name.upcase %></b></h4>   
+          <h4><%= currency.value %> <small>PLN</small></h4>
         </div>
       </div>
       <%end%>
       <% end %>
+  </div>
+  <div class="converter">
+    <%= render 'currencies_converter/form'%>
+    <div class="converter_output">
+      <p id="second_text_output"></p>
     </div>
-    <div class="converter col s12 m12 l6">
-      <%= render 'currencies_converter/form'%>
-      <div class="converter_output">
-        <p id="text_output"></p>
-        <p id="second_text_output"></p>
-      </div>
-    </div>
+  </div>
+  <div class="gold">
+    <h4 class="center-align"><b>GOLD</b></h4>
+    <% if @gold.present? %>
+      <p class="gold-price"><%= @gold.price %> <small>PLN</small></br></p>
+      <p class="gold-date">DATE: <%= @gold.date.strftime('%d-%m-%Y') %></p>
+    <% end %>
   </div>
 </div>
 
 <div class="other_currencies">
-  <h5 class="center-align">Other Currencies</h5>
   <div class="row">
-    <% @currencies.each do |currency|%>
-      <% if @main_currencies.exclude?(currency.name)%>
-      <div class="col s8 offset-s2 m6">
-        <p class="each_other_currency center-align">
-          <span><%= currency.name.upcase %></span>
-          <span><b><%= currency.value %></b></span>
-        </p>
-      </div>
-      <%end%>
-    <% end %>
+    <table class="striped">
+      <thead>
+        <tr>
+          <td class="white-text">NAME</td>
+          <td class="white-text">PRICE</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @currencies.each do |currency|%>
+          <% if @main_currencies.exclude?(currency.name)%>
+            <tr>
+              <td><span class="white-text"><%= currency.name.upcase %></span></td>
+              <td><span class="white-text"><b><%= currency.value %></b> PLN</span></td>
+            </tr>
+          <%end%>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
