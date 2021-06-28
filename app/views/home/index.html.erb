@@ -23,7 +23,7 @@
   <div class="gold">
     <h4 class="center-align"><b>GOLD</b></h4>
     <% if @gold.present? %>
-      <p class="gold-price"><%= @gold.price %> <small>PLN</small></br></p>
+      <p class="gold-price"><%= @gold.price %> <small>PLN</small><br></p>
       <p class="gold-date">DATE: <%= @gold.date.strftime('%d-%m-%Y') %></p>
     <% end %>
   </div>

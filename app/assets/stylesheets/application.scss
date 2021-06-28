@@ -250,15 +250,31 @@ table.striped > thead > tr > td{
 .btn{
   background-color: $base-purple !important;
 }
-.registration-style{
+.registration-style {
   height: calc(100vh - 64px);
   display: flex;
   align-items: center;
-  .row{
+
+  .row {
     background-color: $base-color;
     color: white;
     border: 1px solid black;
     border-radius: 10px;
     padding: 2% 5% 5% 5%;
+  }
+  input {
+    color: white;
+  }
+  input:not(.browser-default):focus:not([readonly]){
+    border-bottom: solid 1px $base-purple;
+    box-shadow: 0 1px 0 0 $base-purple;
+  }
+  .active{
+    color: $base-purple !important;
+  }
+}
+.user_currency{
+  label{
+    color: white;
   }
 }
