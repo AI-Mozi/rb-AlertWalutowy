@@ -1,12 +1,12 @@
 <%if @posts.present? %>
   <div class="center-align">
-    <h3>Your Currencies</h3>
+    <h3 class="white-text">YOUR CURRENCIES</h3>
   </div>
   <div class="container curr_container">
     <div class="row s12 m6 offset-m3 center-align every_value">
       <% @posts.each do |post| %>
         <div class="each_value">
-          <%= line_chart post[:chart], min: (post[:min]-post[:avg]), max: (post[:max]+post[:avg]), curve: false, title: post[:name], round: 5 %>
+          <%= line_chart post[:chart], min: (post[:min]-post[:avg]), max: (post[:max]+post[:avg]), curve: false, title: post[:name], round: 5, colors: ['#9400D3'] %>
           <div class="right-align">
             <% if BidAskCurrency.find_by(currency_id: post[:id]) %>
               <%= link_to edit_bid_ask_currency_path(post[:id]), :class => "waves-effect waves-light btn-small" do %>
