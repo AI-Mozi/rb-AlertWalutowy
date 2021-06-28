@@ -18,7 +18,7 @@
 //= require jquery.turbolinks
 //= require materialize
 //= require chartkick
-//= require Chart.bundle 
+//= require Chart.bundle
 
 document.addEventListener('turbolinks:load', function() {
   elem = document.querySelector('#slide-out');

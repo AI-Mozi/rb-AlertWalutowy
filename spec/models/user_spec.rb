@@ -18,6 +18,11 @@ RSpec.describe User, :type => :model do
       expect(user).to_not be_valid
     end
 
+    it 'is valid if password is longer than 6 characters' do
+      user.password = "asdas"
+      expect(user).to_not be_valid
+    end
+
     it { should validate_presence_of(:email)}
     it { should validate_presence_of(:password)}
     it { should validate_presence_of(:nick)}

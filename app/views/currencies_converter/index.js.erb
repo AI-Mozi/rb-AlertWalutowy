@@ -5,5 +5,5 @@ var amount = "<%= @amount %>";
 var first_currency = "<%= @converted_currency.first[1] %>" 
 var second_currency = "<%= @converted_currency.to_a.last[1] %>"
 
-first_output.innerHTML = "<%= @amount %> <%= @currency %> to <%= @to_currency %> = " + (first_currency * amount).toFixed(3);
+first_output.innerHTML = (first_currency * amount).toFixed(2);
 second_output.innerHTML = "<%= @amount %> <%= @to_currency %> to <%= @currency %> = " + (second_currency * amount).toFixed(3);

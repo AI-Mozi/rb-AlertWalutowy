@@ -2,7 +2,7 @@ fetch_currency:
   cron: '*/5 * * * *'
   class: 'CurrencyWorker'
 fetch_history_currency:
-  cron: '0 0 * * *'
+  cron: '*/5 * * * *'
   class: 'HistoryCurrencyWorker'
 fetch_bid_ask_currency:
   cron: '*/5 * * * *'
@@ -10,3 +10,6 @@ fetch_bid_ask_currency:
 fetch_user_bid_ask_currency:
   cron: '*/5 * * * *'
   class: 'UserBidAskCurrencyWorker'
+fetch_gold:
+  cron: '*/5 * * * *'
+  class: 'GoldWorker'
