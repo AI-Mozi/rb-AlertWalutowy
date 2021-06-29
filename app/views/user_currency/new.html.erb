@@ -5,7 +5,7 @@
   <%= simple_form_for @user_currency, url: {action: "create"}  do |f| %>
     <div class="row">
       <% Currency.all.each do |currency| %>
-        <div class="col s10 offset-s2 m4 offset-m2">
+        <div class="col s10 offset-s2 m3 offset-m1">
           <p>
             <label>
               <%= check_box_tag currency.id, currency.id, current_user.currencies.include?(currency), :name => 'user[currency_ids][]' %>

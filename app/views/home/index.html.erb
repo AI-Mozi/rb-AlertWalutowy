@@ -5,14 +5,17 @@
   <div class="main_currencies">
     <% @currencies.each do |currency|%>
       <% if @main_currencies.include?(currency.name)%>
-      <div class="row main_currencies_row">
-        <div class="col s8 l8">
-          <h4><b><%= currency.name.upcase %></b></h4>   
-          <h4><%= currency.value %> <small>PLN</small></h4>
-        </div>
-      </div>
-      <%end%>
+        <%= link_to controller: 'home', id: currency.name, action: 'index' do%>
+          <div class="row main_currencies_row">
+            <div>
+              <h4><b><%= currency.name.upcase %></b></h4>
+              CURRENT VALUE:
+              <h4 class="main_currency_value"><%= currency.value %> <small>PLN</small></h4>
+            </div>
+          </div>
+        <% end %>
       <% end %>
+    <% end %>
   </div>
   <div class="converter">
     <%= render 'currencies_converter/form'%>
@@ -21,7 +24,7 @@
     </div>
   </div>
   <div class="gold">
-    <h4 class="center-align"><b>GOLD</b></h4>
+    <h4 class="center-align"><b>GOLD PRICE</b><small> (1g)</small></h4>
     <% if @gold.present? %>
       <p class="gold-price"><%= @gold.price %> <small>PLN</small><br></p>
       <p class="gold-date">DATE: <%= @gold.date.strftime('%d-%m-%Y') %></p>

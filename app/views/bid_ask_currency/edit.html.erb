@@ -1,28 +1,22 @@
-<%= form_for @add_purchase_and_sale, url: bid_ask_currency_path, method: :patch do |uc| %>
-  <div class="container">
-    <div class="row">
-      <div class="center-align">
-        <h3><%= @currency_name %></h3>
-        <p>Select the amount you want the currency to reach to receive an email notification.</p>
-      </div>
+<div class="container bid_ask_edit">
+  <div class="row">
+  <%= form_for @add_purchase_and_sale, url: bid_ask_currency_path, method: :patch do |uc| %>
+
+    <h3 class="white-text"><%= @currency_name %></h3>
+    <p class="white-text">Select the amount you want the currency to reach to receive an email notification.</p>
+    <div class="input-field col s5 m4 offset-s1 offset-m2">
+      <%= uc.number_field :purchase, placeholder: "Purchase", step: 0.00001%>
     </div>
-    <div class="row">
-      <div class="input-field col s5 m4 offset-s1 offset-m2">
-        <%= uc.number_field :purchase, placeholder: "Purchase", step: 0.00001%>
-      </div>
-      <div class="input-field col s5 m4">
-        <%= uc.number_field :sale, placeholder: "Sale", step: 0.00001%>
-      </div>
+    <div class="input-field col s5 m4">
+      <%= uc.number_field :sale, placeholder: "Sale", step: 0.00001%>
     </div>
-  </div>
-   <div class="center-align">
+    <br>
     <%= button_tag(type: "submit", :class => "btn waves-effect waves-light") do%>
       ADD<i class="material-icons left">add</i>
     <%end%>
-  </div>
-<%end%>
 
-<div class="center-align">
-  <br>
+  <%end%>
   <%= link_to "Back", logged_user_index_path , :class => "btn-small waves-effect waves-light"%>
+  </div>
 </div>
+
