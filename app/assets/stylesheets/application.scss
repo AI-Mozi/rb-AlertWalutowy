@@ -99,18 +99,10 @@ body{
     margin-left: 15%;
   }
 }
-.main_currencies_row{
-  margin: 0;
-  color: white;
-  background-color: $base-color;
-  border: 1px solid black;
-  border-radius: 15px;
-}
 select{
   display: block;
 }
 .converter{
-  padding-bottom: 22px !important;
   grid-area: converter; 
   margin: 20px 20px 0 0;
   color: white;
@@ -124,6 +116,12 @@ select{
       margin: 0;
       padding-top: 30px;
     }
+    p{
+      padding-bottom: 10px;
+    }
+    form{
+    height: 5%;
+   }
 }
 .quantity_input{
   text-align: center;
@@ -162,8 +160,13 @@ select{
   margin: 20px 20px 0 0;
   border: 1px solid black;
   color:white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
     h4{
       padding-bottom: 10px;
+      color: #D4AF37;
+      //color: #A48111;
     }
     .gold-price{
       font-size: 65px;
@@ -180,12 +183,28 @@ select{
 }
 .chart{
   grid-area: chart;
+  .chartjs-render-monitor{
+    color: white
+  }
 }
 .main_currencies{
   grid-area: main_currencies;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  .main_currencies_row{
+    text-align: center;
+    margin: 0;
+    color: white;
+    background-color: $base-color;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 100%;
+    flex-grow: 1;
+      .main_currency_value{
+        margin-top: 4px;
+      }
+  }
 }
 .main_page{
   margin-top: 50px;
@@ -200,7 +219,8 @@ select{
   justify-content: center;
   align-items: center;
   height: 200px;
-  padding: 0 20px
+  padding: 0 30px;
+  margin: 0;
 }
 .first_output{
   vertical-align: baseline;
@@ -240,9 +260,6 @@ table.striped > thead > tr > td{
   color: white;
   border: 1px solid black;
 }
-.chartjs-render-monitor{
-  color: white !important;
-}
 .logout-btn{
   background-color: $base-purple;
   font-weight: bold;
@@ -276,5 +293,27 @@ table.striped > thead > tr > td{
 .user_currency{
   label{
     color: white;
+  }
+}
+.bid_ask_edit{
+  height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  .row {
+    background-color: $base-color;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2% 5% 5% 5%;
+    text-align: center;
+  }
+  .btn{
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  input{
+    text-align: center;
   }
 }
