@@ -1,11 +1,5 @@
-class LoggedUserChartService < ApplicationService
-  attr_accessor :user_currency
-
-  def initialize(user_currency)
-    @user_currency = user_currency
-  end
-
-  def call
+module LoggedUserHelper
+  def logged_user_chart_data(user_currency)
     @posts = []
     user_currency.each do |past|
       @post = {}
