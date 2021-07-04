@@ -7,11 +7,9 @@
       <% if @main_currencies.include?(currency.name)%>
         <%= link_to controller: 'home', id: currency.name, action: 'index' do%>
           <div class="row main_currencies_row">
-            <div>
-              <h4><b><%= currency.name.upcase %></b></h4>
-              CURRENT VALUE:
-              <h4 class="main_currency_value"><%= currency.value %> <small>PLN</small></h4>
-            </div>
+            <p><b><%= currency.name.upcase %></b></p>
+            CURRENT VALUE:
+            <p class="main_currency_value"><%= currency.value %> <small>PLN</small></p>
           </div>
         <% end %>
       <% end %>
@@ -32,7 +30,7 @@
   </div>
 </div>
 
-<div class="other_currencies">
+<div class="container other_currencies">
   <div class="row">
     <table class="striped">
       <thead>
