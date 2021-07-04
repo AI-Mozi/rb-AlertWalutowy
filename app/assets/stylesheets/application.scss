@@ -86,18 +86,8 @@ body{
   background-color: #dddddd;
 }
 ::-webkit-scrollbar {
-  width: 0;  
-  background: transparent; 
-}
-.home_container{
-  margin-top: 50px;
-}
-@media screen and (min-width: 840px){
-  .home_container,
-  .other_currencies{
-    width: 70%;
-    margin-left: 15%;
-  }
+  width: 0;
+  background: transparent;
 }
 select{
   display: block;
@@ -154,6 +144,110 @@ select{
     "chart chart main_currencies"
     "converter gold main_currencies"; 
 }
+@media only screen and (max-width: 1024px) and (min-width: 550px) {
+  .grid-container {
+    grid-template-columns: 0.9fr;
+    grid-template-rows: 0.9fr 0.5fr 1fr 0.6fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "chart"
+    "main_currencies"
+    "converter"
+    "gold";
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .grid-container * {
+    margin: 10px 0 !important;
+  }
+  .main_currencies {
+    display: block !important;
+    height: 153px;
+    .main_currencies_row {
+      padding-top: 10px;
+      float: left;
+      width: 25%;
+      a{
+        height: 153px !important;
+      }
+      p{
+        font-size: 20px !important;
+        flex-grow: 1 !important;
+      }
+      .main_currency_value {
+        margin: 4px 0;
+        font-size: 20px;
+      }
+    }
+  }
+  .currency_buttons{
+    #amount,
+    .first_output{
+      width: 150px !important;
+    }
+    select{
+      width: 100px;
+      margin: 10px 0 !important;
+      justify-content: center;
+    }
+  }
+  .convert-button{
+    margin: 0 20px !important;
+  }
+}
+@media only screen and (max-width: 550px){
+  .grid-container{
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.3fr 0.5fr 0.3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "chart"
+    "main_currencies"
+    "converter"
+    "gold";
+  }
+  .grid-container * {
+    margin: 10px 0 !important;
+  }
+  .container{
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+  .converter{
+    .currency_buttons{
+      width: 50%;
+    }
+  }
+  .currency_buttons{
+    #amount,
+    .first_output{
+      width: 75px !important;
+    }
+    select{
+      width: 75px;
+      margin: 10px 0 !important;
+      justify-content: center;
+    }
+  }
+  .main_currencies{
+    display: block !important;
+    .main_currencies_row{
+      float: left;
+      width: 50%;
+      height: 130px !important;
+      p{
+        font-size: 18px !important;
+      }
+      .main_currency_value{
+        font-size: 18px !important;
+        margin-top: 5px !important;
+        font-weight: bold;
+      }
+    }
+  }
+}
 .gold{
   grid-area: gold; 
   background-color: $base-color;
@@ -198,6 +292,10 @@ select{
   justify-content: space-between;
   flex-direction: column;
   .main_currencies_row{
+    p{
+      font-size: 33px;
+      margin: 3px
+    }
     text-align: center;
     margin: 0;
     color: white;
@@ -207,7 +305,8 @@ select{
     height: 100%;
     flex-grow: 1;
       .main_currency_value{
-        margin-top: 4px;
+        margin: 4px 0;
+        font-size: 36px;
       }
   }
 }
@@ -296,6 +395,7 @@ table.striped > thead > tr > td{
   align-items: center;
   justify-content: center;
   align-items: center;
+
   .row {
     background-color: $base-color;
     color: white;
@@ -317,9 +417,11 @@ table.striped > thead > tr > td{
   flex-direction: row;
   align-items: center;
   padding-top: 50px;
-  justify-content: center;
   align-items: center;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
   .each_currency_logged_user{
+    flex: 0 0 auto;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -329,7 +431,7 @@ table.striped > thead > tr > td{
     width: 200px;
     text-align: center;
     border: 1px solid black;
-    h5{
+    h6{
       margin: 0;
     }
   }
@@ -340,10 +442,47 @@ table.striped > thead > tr > td{
 }
 .logged_user_chart{
   padding: 20px 10px;
-  margin-top: 100px;
   background-color: $base-color;
   border: 1px solid black;
+  min-width: 65%;
+  height: 350px;
+  margin-top: 70px;
 }
 .add_currencies_btn{
+  font-weight: bold;
   padding-top: 100px;
+  .btn-small{
+    margin-bottom: 20px;
+  }
+}
+.logged_user_currencies_table{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: $base-color;
+  margin-left: 10px;
+  border: 1px solid black;
+  height: 350px;
+  padding: 0 30px;
+  min-width: 30%;
+  margin-top: 70px;
+    p{
+      margin: 0;
+      font-size: 30px;
+    }
+  h3, h5, h4{
+    margin: 10px 0;
+    font-weight: bold;
+  }
+}
+.logged_user{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.clear{
+  clear: both;
 }

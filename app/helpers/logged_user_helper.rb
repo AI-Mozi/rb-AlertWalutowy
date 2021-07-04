@@ -13,4 +13,19 @@ module LoggedUserHelper
     end
     @posts
   end
+
+  def logged_user_currencies_info(currency)
+    currency.reverse!
+    @first = currency.first[1]
+    @second = currency.second[1]
+    @last = currency.last[1]
+    @last_difference = @first - @second
+    @week_difference = @first - @last
+
+    {
+      :current => @first,
+      :last => @last_difference,
+      :week => @week_difference
+    }
+  end
 end
