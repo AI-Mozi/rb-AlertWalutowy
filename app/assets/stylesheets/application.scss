@@ -85,10 +85,6 @@ body{
 .sidenav{
   background-color: #dddddd;
 }
-::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
 select{
   display: block;
 }
@@ -144,10 +140,43 @@ select{
     "chart chart main_currencies"
     "converter gold main_currencies"; 
 }
-@media only screen and (max-width: 1024px) and (min-width: 550px) {
+@media only screen and (min-width: 1216px) and (max-width: 1750px){
+  .grid-container{
+    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-rows: 1.5fr 0.6fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "chart chart"
+      "main_currencies main_currencies"
+      "converter gold";
+  }
+  .main_currencies{
+    margin: 20px 0;
+    display: block !important;
+    .main_currencies_row{
+      float: left;
+      width: 25%;
+      p{
+        font-size: 30px !important;
+      }
+    }
+  }
+  .gold{
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+  }
+  .chart{
+    margin: 0 !important;
+  }
+  .converter{
+    margin-right: 5px !important;
+    margin-top: 0 !important;
+  }
+}
+@media only screen and (max-width: 1215px) and (min-width: 671px) {
   .grid-container {
     grid-template-columns: 0.9fr;
-    grid-template-rows: 0.9fr 0.5fr 1fr 0.6fr;
+    grid-template-rows: 1fr 0.5fr 0.7fr 0.5fr;
     gap: 0px 0px;
     grid-template-areas:
     "chart"
@@ -181,26 +210,15 @@ select{
       }
     }
   }
-  .currency_buttons{
-    #amount,
-    .first_output{
-      width: 150px !important;
-    }
-    select{
-      width: 100px;
-      margin: 10px 0 !important;
-      justify-content: center;
-    }
-  }
   .convert-button{
-    margin: 0 20px !important;
+    margin: 0 10px !important;
   }
 }
-@media only screen and (max-width: 550px){
+@media only screen and (max-width: 670px){
   .grid-container{
     grid-template-columns: 1fr;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.3fr 0.5fr 0.3fr;
+    grid-template-rows: 0.5fr 0.3fr 0.4fr 0.3fr;
     gap: 0px 0px;
     grid-template-areas:
     "chart"
@@ -215,12 +233,19 @@ select{
     width: 95% !important;
     max-width: 95% !important;
   }
-  .converter{
-    .currency_buttons{
-      width: 50%;
+  .converter-display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .convert-button{
+      margin: 10px !important;
     }
   }
   .currency_buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     #amount,
     .first_output{
       width: 75px !important;
@@ -228,7 +253,6 @@ select{
     select{
       width: 75px;
       margin: 10px 0 !important;
-      justify-content: center;
     }
   }
   .main_currencies{
@@ -250,7 +274,7 @@ select{
 }
 @media only screen and (max-width: 360px){
   .container{
-    width: 98% !important;
+    width: 99% !important;
   }
 }
 .gold{
@@ -400,7 +424,10 @@ table.striped > thead > tr > td{
   align-items: center;
   justify-content: center;
   align-items: center;
-
+  #user_currency_purchase,
+  #user_currency_sale{
+    color: white !important;
+  }
   .row {
     background-color: $base-color;
     color: white;
