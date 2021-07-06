@@ -1,0 +1,17 @@
+<div class="pdf-container">
+  <div class="pdf-form">
+    <h4 class="center-align">EXPORT TO PDF</h4>
+    <%= form_tag pdf_generator_index_url, method: 'get' do %>
+      <p>CURRENCY</p>
+      <%= select_tag 'currency', options_for_select(Currency.all.pluck(:name)) %>
+      <p>DATE FROM:</p>
+      <%= date_field_tag 'from_date' %>
+      <p>DATE TO:</p>
+      <%= date_field_tag 'to_date' %>
+
+      <div class="btn-container">
+        <%= button_tag 'Generate PDF', class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

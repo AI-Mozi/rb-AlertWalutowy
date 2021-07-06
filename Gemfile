@@ -29,6 +29,8 @@ gem 'sentry-ruby'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
