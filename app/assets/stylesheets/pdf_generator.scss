@@ -1,0 +1,37 @@
+// Place all the styles related to the PdfGenerator controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$base-color: rgb(32, 40, 64);
+$second-color: rgb(49, 58, 85);
+$base-purple: #9400D3;
+
+.pdf-container{
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .pdf-form{
+    background-color: $base-color;
+    padding: 10px 50px 30px 50px;
+    p{
+      font-size: 20px;
+      margin-top: 25px;
+      margin-bottom: 3px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .btn-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  input[type=date]:not(.browser-default):focus:not([readonly]){
+    border-bottom: solid 1px $base-purple;
+    box-shadow: 0 1px 0 0 $base-purple;
+  }
+  input[type=date]{
+    color: white;
+  }
+
+}

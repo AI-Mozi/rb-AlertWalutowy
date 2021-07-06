@@ -1,0 +1,22 @@
+<h1 class="center-align">ALERT WALUTOWY</h1>
+<hr>
+<h2 style="font-size: 40px"><%= @name.upcase %></h2>
+
+<div style="width: 50%">
+  <table style="width: 100%; font-size: 20px">
+    <thead>
+    <tr>
+      <td><b>DATE:</b></td>
+      <td><b>VALUE:</b></td>
+    </tr>
+    </thead>
+    <tbody>
+      <% @values.each do |p|%>
+        <tr>
+          <td><%= p['effectiveDate'] %></td>
+          <td><%= p['mid'] %> PLN</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

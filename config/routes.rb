@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :bid_ask_currency, only: %i[edit update]
   resources :currencies_converter, only: :index
   resources :home, only: %i[index change_currency]
+  resources :pdf_generator, only: :index
 
   mount Sidekiq::Web => '/sidekiq'
 end
